@@ -12,13 +12,13 @@ angular.module('movieCollectionApp')
   	
   	// Load movie list from LocalStorage
     var loadMovies = function() {
-    	var movieList = {
-    		movies: localStorage('MovieCollectionApp.movies') ? 
+    	var movielist = {
+    		movies: localStorage['MovieCollectionApp.movies'] ? 
     			JSON.parse(localStorage['MovieCollectionApp.movies']) : [],
-    		nextId: localStorage('MovieCollectionApp.nextId') ? 
+    		nextId: localStorage['MovieCollectionApp.nextId'] ? 
     			parseInt(localStorage['']) : 0
     	};
-    	return movies;
+    	return movielist;
     };
 
     // Save movie list to LocalStorage

@@ -1,11 +1,21 @@
 <div class="panel panel-info">
 	<div class="panel-heading">
 		Movies
-		<button type="button" class="btn btn-success btn-xs pull-right"
-		ng-click = "showModal()">
+		<button type="button" class="btn btn-success btn-xs pull-right" ng-click="showModal()">
+			<span class="glyphicon glyphicon-plus"></span>
 		</button>
 	</div>
 	<div class="panel-body">
-		
+		<div ng-if="!movies.length" class="text-center">
+			Use the button above to add a new movie
+		</div>
+		<div class="list-group">
+			<a class="list-group-item" ng-repeat="movie in movies track by $index">
+				{{movie.title}}
+				<button type="button" class="close" ng-click="deleteMovie(movie)"> 
+					&times; 
+				</button>
+			</a>
+		</div>
 	</div>
 </div>

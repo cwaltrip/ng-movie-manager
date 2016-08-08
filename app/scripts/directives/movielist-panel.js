@@ -7,17 +7,17 @@
  * # MovielistPanel
  */
 angular.module('movieCollectionApp')
-  .directive('MovielistPanel', function ($location, $modal, MovielistService) {
+  .directive('movielistPanel', function ($location, $modal, MovielistService) {
     return {
       templateUrl: 'views/templates/movielist-panel.html',
       restrict: 'E',
       scope: {},
-      link: function(scope, element, attrs) {
+      link: function($scope) {
         // Init variables
         $scope.movie = {};
         var addMovieModal = $modal({
         	scope: $scope,
-        	templateUrl: 'view/templates/addmovie-modal.html',
+        	template: 'views/templates/movielist-modal.html',
         	show: false
         });
 
@@ -26,6 +26,8 @@ angular.module('movieCollectionApp')
 
         // Show the modal window
         $scope.showModal = function() {
+        	console.log('showModal invoked');
+        	console.log(addMovieModal);
         	addMovieModal.$promise.then(addMovieModal.show);
         };
 
