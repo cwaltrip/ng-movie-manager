@@ -28,13 +28,14 @@
           <li><a ng-href="#/about">About</a></li>
           <li><a ng-href="#">Contact</a></li>
         </ul>
-        <h3 class="text-muted">movieCollection</h3>
+        <h3 class="text-muted">My Movie Collection</h3>
       </div>
 
-      <div ng-view=""></div>
+      <!-- <div ng-view=""></div> -->
+      <movielist-panel></movielist-panel>
 
       <div class="footer">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+        <p><span class="glyphicon glyphicon-user"></span> Created by Chris Waltrip</p>
       </div>
     </div>
 
@@ -78,6 +79,8 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/services/movielist-service.js"></script>
+        <script src="scripts/directives/movielist-panel.js"></script>
         <!-- endbuild -->
 </body>
 </html>
