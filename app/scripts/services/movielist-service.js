@@ -12,6 +12,7 @@ angular.module('movieCollectionApp')
   	
   	// Load movie list from LocalStorage
     var loadMovies = function() {
+      console.log('MovielistService.loadMovies invoked');
     	var movielist = {
     		movies: localStorage['MovieCollectionApp.movies'] ? 
     			JSON.parse(localStorage['MovieCollectionApp.movies']) : [],
@@ -23,12 +24,14 @@ angular.module('movieCollectionApp')
 
     // Save movie list to LocalStorage
     var saveMovies = function() {
+      console.log('MovielistService.saveMovies invoked');
     	localStorage['MovieCollectionApp.movies'] = JSON.stringify(MovieList.movies);
     	localStorage['MovieCollectionApp.nextId'] = MovieList.nextId;
     };
 
     // Helper to find a movie with a given ID (uses lodash.js)
     var findById = function(movieId) {
+      console.log('MovielistService.findById invoked');
     	return _.find(MovieList.movies, function(movie) {
     		return movie.id === parseInt(movieId);
     	});
@@ -36,6 +39,7 @@ angular.module('movieCollectionApp')
 
     // Return all movies, or find a movie by the given ID
     this.query = function(movieId) {
+      console.log('MovielistService.query invoked');
     	if (movieId) {
     		return findById(movieId);
     	} else {
@@ -45,6 +49,7 @@ angular.module('movieCollectionApp')
 
     // Save a new movie to the MovieList model
     this.save = function(movie) {
+      console.log('MovielistService.save invoked');
     	movie.id = MovieList.nextId++;
     	MovieList.movies.push(movie);
     	saveMovies();
@@ -52,6 +57,7 @@ angular.module('movieCollectionApp')
 
     // Remove a given movie from the MovieList model (uses lodash.js)
     this.remove = function(movie) {
+      console.log('MovielistService.remove invoked');
     	_.remove(MovieList.movies, function(aMovie) {
     		return aMovie.id === movie.id;
     	});

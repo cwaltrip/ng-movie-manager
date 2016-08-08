@@ -26,13 +26,14 @@ angular.module('movieCollectionApp')
 
         // Show the modal window
         $scope.showModal = function() {
-        	console.log('showModal invoked');
+        	console.log('movielistPanel.showModal invoked');
         	console.log(addMovieModal);
         	addMovieModal.$promise.then(addMovieModal.show);
         };
 
         // Create a new movie from modal fields
-        $scope.createMovie = function() {
+        $scope.addMovie = function() {
+        	console.log('movielistPanel.addMovie invoked');
         	MovielistService.save($scope.movie);
         	addMovieModal.hide();
         	$scope.movie = {};
@@ -40,6 +41,7 @@ angular.module('movieCollectionApp')
 
         // Delete selected movie, redirect home
         $scope.deleteMovie = function(movie) {
+        	console.log('movielistPanel.deleteMovie invoked');
         	MovielistService.remove(movie);
         	$location.path('/');
         };

@@ -6,12 +6,12 @@
 		</button>
 	</div>
 	<div class="panel-body">
-		<div ng-if="!movies.length" class="text-center">
+		<div ng-if="!movielist.length" class="text-center">
 			Use the button above to add a new movie
 		</div>
 		<div class="list-group">
-			<a class="list-group-item" ng-repeat="movie in movies track by $index">
-				{{movie.title}}
+			<a class="list-group-item" ng-repeat="movie in movielist track by $index">
+				{{movie.title}}, {{movie.director}}, {{movie.genre}}, {{movie.year}}, {{movie.rating}}
 				<button type="button" class="close" ng-click="deleteMovie(movie)"> 
 					&times; 
 				</button>
