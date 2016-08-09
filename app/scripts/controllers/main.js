@@ -48,5 +48,13 @@ angular.module('movieCollectionApp')
     $scope.gotoMovie = function(movieId) {
         $location.path('movie/' + movieId);
     };
+
+    $scope.getMovieCount = function() {
+        if ($scope.movielist.length === 1) {
+            return 'There is 1 movie in your collection.';
+        } else {
+            return 'There are ' + $scope.movielist.length +' movies in your collection.';
+        }
+    };
     
   });
