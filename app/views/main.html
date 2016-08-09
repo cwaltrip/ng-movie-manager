@@ -15,7 +15,7 @@
 				<button type="button" class="btn btn-link" ng-click="gotoMovie(movie.id)"> 
 					<span class="glyphicon glyphicon-eye-open" title="View movie"></span> 
 				</button>
-				<strong>{{movie.title}}</strong>, {{movie.director}}, {{movie.genre}}, {{movie.year}}, {{movie.rating}}
+				<strong>{{movie.title}}</strong> <span class="text-muted">{{movie.director}}, {{movie.genre}}, {{movie.year}}, {{movie.rating}}</span>
 				<button type="button" class="btn btn-link pull-right" ng-click="deleteMovie(movie)">  
 					<span class="glyphicon glyphicon-remove" title="Delete movie"></span> 
 				</button>

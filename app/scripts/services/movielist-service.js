@@ -32,6 +32,11 @@ angular.module('movieCollectionApp')
     	localStorage['MovieCollectionApp.nextId'] = MovieList.nextId;
     };
 
+    // Helper to natural-sort movies by title
+    var sortByTitle = function(movies) {
+        return _.sortBy(movies, function(o) { return o.title; });
+    };
+
     // Helper to find a movie with a given ID (uses lodash.js)
     var findById = function(movieId) {
     	return _.find(MovieList.movies, function(movie) {
@@ -39,11 +44,26 @@ angular.module('movieCollectionApp')
     	});
     };
 
-    var sortByTitle = function(movies) {
-        return _.sortBy(movies, function(o) { return o.title; });
+    // Helper to find a movie with a given ID (uses lodash.js)
+    var findByValue = function(value) {
+        // return _.find(MovieList.movies, function(movie) {
+        //     return _.includes(Object.values(movie), value);
+        // });
+        return _.filter(MovieList.movies, function(movie) {
+            return _.includes(movie, value);
+        });
     };
 
-    // Return all movies, or find a movie by the given ID
+    // Return all movies with a given field value, or return an empty set
+    this.search = function(value) {
+        if (value) {
+            return findByValue(value);
+        } else {
+            return {};
+        }
+    };
+
+    // Return a movie with the given ID, or return set of all movies
     this.query = function(movieId) {
     	if (movieId) {
     		return findById(movieId);
