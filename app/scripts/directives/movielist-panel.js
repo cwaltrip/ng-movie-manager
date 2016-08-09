@@ -7,13 +7,17 @@
  * # MovielistPanel
  */
 angular.module('movieCollectionApp')
-  .directive('movielistPanel', function ($location, $modal, MovielistService) {
+  .directive('movielistPanel', function ($location, $modal, $routeParams, MovielistService) {
     return {
       templateUrl: 'views/templates/movielist-panel.html',
       restrict: 'E',
       scope: {},
       link: function($scope) {
         // Init variables
+        $scope.currentMovie = $routeParams.movieId;
+        $scope.gotoMovie = function(movieId) {
+            $location.path('movie/' + movieId);
+        };
         $scope.movie = {};
         var addMovieModal = $modal({
         	scope: $scope,
@@ -35,6 +39,7 @@ angular.module('movieCollectionApp')
         	MovielistService.save($scope.movie);
         	addMovieModal.hide();
         	$scope.movie = {};
+            $location.path('/');
         };
 
         // Delete selected movie, redirect home

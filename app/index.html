@@ -24,14 +24,14 @@
     <div class="container">
       <div class="header">
         <ul class="nav nav-pills pull-right">
-          <li class="active"><a ng-href="#">Home</a></li>
+          <li class="active"><a ng-href="#/">Home</a></li>
           <li><a ng-href="#/about">About</a></li>
           <li><a ng-href="#/search">Search</a></li>
         </ul>
         <h3 class="text-muted">My Movie Collection</h3>
       </div>
       
-      <movielist-panel></movielist-panel>
+      <!-- <movielist-panel></movielist-panel> -->
 
       <div ng-view=""></div>
 
@@ -81,6 +81,7 @@
         <script src="scripts/services/movielist-service.js"></script>
         <script src="scripts/directives/movielist-panel.js"></script>
         <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/about.js"></script>
         <script src="scripts/controllers/search.js"></script>
         <script src="scripts/controllers/movie.js"></script>
         <!-- endbuild -->

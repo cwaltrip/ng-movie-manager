@@ -1,1 +1,25 @@
-<p>This is the main view.</p>
+<!-- <p>This is the Main view.</p> -->
+<div class="panel panel-info">
+	<div class="panel-heading">
+		There are {{movielist.length}} movies in your collection.
+		<button type="button" class="btn btn-success btn-xs pull-right" ng-click="showModal()">
+			<span class="glyphicon glyphicon-plus"></span>
+		</button>
+	</div>
+	<div class="panel-body">
+		<div ng-if="!movielist.length" class="text-center">
+			No movies found! Use the button above to add to your collection.
+		</div>
+		<div class="list-group">
+			<a class="list-group-item" ng-repeat="movie in movielist track by $index">
+				<button type="button" class="btn btn-link" ng-click="gotoMovie(movie.id)"> 
+					<span class="glyphicon glyphicon-eye-open"></span> 
+				</button>
+				<strong>{{movie.title}}</strong>, {{movie.director}}, {{movie.genre}}, {{movie.year}}, {{movie.rating}}
+				<button type="button" class="btn btn-link pull-right" ng-click="deleteMovie(movie)">  
+					<span class="glyphicon glyphicon-remove"></span> 
+				</button>
+			</a>
+		</div>
+	</div>
+</div>

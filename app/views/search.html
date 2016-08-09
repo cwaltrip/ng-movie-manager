@@ -1,1 +1,18 @@
-<p>This is the search view.</p>
+<!-- <p>This is the Search view.</p> -->
+<div class="panel panel-info">
+	<div class="panel-heading">
+		Search
+	</div>
+	<form role="form" id="search-movie" name="searchForm">
+	<div class="panel-body">
+		<div class="form-group">
+			<label for="search-field">Enter any term to search...</label>
+			<input type="text" class="form-control" id="search-field" placeholder="Search" ng-model="search.term" required>
+		</div>
+		<!-- <div class="panel-footer"> -->
+			<button type="submit" class="btn btn-success" ng-click="searchMovies()" ng-disabled="!searchForm.$valid">Search</button>
+			<!-- <button type="button" class="btn btn-danger" ng-click="$location.path('main/')">Cancel</button> -->
+		<!-- </div> -->
+	</form>
+	</div>
+</div>
