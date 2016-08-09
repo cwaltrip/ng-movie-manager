@@ -39,40 +39,11 @@ angular.module('movieCollectionApp')
     	});
     };
 
-    // Utility method to perform case-insensitive substring match on movie.values = target
-    // (uses lodash.js)
-    var isMatchByValue = function(obj, target) {
-        var lowTgt = _.lowerCase(target);
-        var objValues = _.values(_.omit(obj, 'id'));
-        for (var i = 0, len = objValues.length; i < len; i++) {
-            var lowValue = _.lowerCase(objValues[i]);
-            if (lowValue.indexOf(lowTgt) !== -1) {
-                return obj;
-            }
-        }
-    };
-
-    // Find a movie with a given ID (uses lodash.js)
-    var findByValue = function(value) {
-        return _.filter(MovieList.movies, function(movie) {
-            return isMatchByValue(movie, value);
-        });
-    };
-
     // Perform a natural (alphabetical) sort of movies by title (uses lodash.js)
     var sortByTitle = function(movies) {
         return _.sortBy(movies, function(mov) { 
             return mov.title; 
         });
-    };
-
-    // Return all movies with a given field value, or return an empty set
-    this.search = function(value) {
-        if (value) {
-            return findByValue(value);
-        } else {
-            return {};
-        }
     };
 
     // Return a movie with the given ID, or return set of all movies

@@ -8,17 +8,13 @@
 	</div>
 	<div class="panel-body">
 		<div class="list-group">
-			<!-- <label for="search-field">Enter any term to search...</label> -->
 			<input type="text" class="form-control" id="search-field" placeholder="Search movies..." ng-model="searchTerm" required>
 		</div>
-	<!-- </div>
-	<div class="panel-body"> -->
 		<div ng-if="!movielist.length" class="text-center">
 			No movies found! Use the button above to add to your collection.
 		</div>
-			<!-- <button type="submit" class="btn btn-success" ng-click="findMovies(searchTerm)" ng-disabled="!searchForm.$valid">Search</button> -->
 		<div class="list-group">
-			<a class="list-group-item" ng-repeat="movie in movielist | filter: searchTerm ">
+			<a class="list-group-item" ng-repeat="movie in movielist | filter:searchTerm track by $index">
 				<button type="button" class="btn btn-link" ng-click="gotoMovie(movie.id)"> 
 					<span class="glyphicon glyphicon-eye-open" title="View movie"></span> 
 				</button>

@@ -84,6 +84,12 @@ body {
   color: #428bca;
 }
 
+.header {
+  margin-bottom: 0;
+  padding-bottom: 0.5em;
+  border: none;
+}
+
 .aside-backdrop.am-fade,.modal-backdrop.am-fade{
     background:rgba(0,0,0,.5);
     -webkit-animation-duration:.15s;

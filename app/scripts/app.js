@@ -30,11 +30,6 @@ angular
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
-      .when('/search', {
-        title: 'Search | My Movie Collection',
-        templateUrl: 'views/search.html',
-        controller: 'SearchCtrl'
-      })
       .when('/movie/:movieId', {
         title: 'Movie | My Movie Collection',
         templateUrl: 'views/movie.html',
