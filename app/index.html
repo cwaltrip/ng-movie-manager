@@ -2,7 +2,7 @@
 <html class="no-js">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>My Movie Collection</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -26,14 +26,14 @@
         <ul class="nav nav-pills pull-right">
           <li class="active"><a ng-href="#">Home</a></li>
           <li><a ng-href="#/about">About</a></li>
-          <li><a ng-href="#">Contact</a></li>
+          <li><a ng-href="#/search">Search</a></li>
         </ul>
         <h3 class="text-muted">My Movie Collection</h3>
       </div>
-
-      <!-- <div ng-view=""></div> -->
-      <p>Hi there</p>
+      
       <movielist-panel></movielist-panel>
+
+      <div ng-view=""></div>
 
       <div class="footer">
         <p><span class="glyphicon glyphicon-user"></span> Created by Chris Waltrip</p>
@@ -80,6 +80,9 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/services/movielist-service.js"></script>
         <script src="scripts/directives/movielist-panel.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/search.js"></script>
+        <script src="scripts/controllers/movie.js"></script>
         <!-- endbuild -->
 </body>
 </html>

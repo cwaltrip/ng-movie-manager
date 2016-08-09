@@ -20,6 +20,18 @@ angular
   ])
   .config(function ($routeProvider) {
     $routeProvider
+      .when('/main', {
+        templateUrl: 'views/main.html',
+        controller: 'MainCtrl'
+      })
+      .when('/search', {
+        templateUrl: 'views/search.html',
+        controller: 'SearchCtrl'
+      })
+      .when('/movie/:id', {
+        templateUrl: 'views/movie.html',
+        controller: 'MovieCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

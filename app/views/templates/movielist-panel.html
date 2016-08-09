@@ -7,11 +7,11 @@
 	</div>
 	<div class="panel-body">
 		<div ng-if="!movielist.length" class="text-center">
-			Use the button above to add a new movie
+			No movies found! Use the button above to add to your collection.
 		</div>
 		<div class="list-group">
 			<a class="list-group-item" ng-repeat="movie in movielist track by $index">
-				{{movie.title}}, {{movie.director}}, {{movie.genre}}, {{movie.year}}, {{movie.rating}}
+				({{movie.id}}) {{movie.title}}, {{movie.director}}, {{movie.genre}}, {{movie.year}}, {{movie.rating}}
 				<button type="button" class="close" ng-click="deleteMovie(movie)"> 
 					&times; 
 				</button>

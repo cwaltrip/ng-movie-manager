@@ -77,3 +77,11 @@ body {
     border-bottom: 0;
   }
 }
+
+/* =================================== */
+
+.aside-backdrop.am-fade,.modal-backdrop.am-fade{
+    background:rgba(0,0,0,.5);
+    -webkit-animation-duration:.15s;
+    animation-duration:.15s
+}
