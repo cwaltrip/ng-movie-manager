@@ -25,11 +25,6 @@ angular
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-      .when('/about', {
-        title: 'About | My Movie Collection',
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
-      })
       .when('/movie/:movieId', {
         title: 'Movie | My Movie Collection',
         templateUrl: 'views/movie.html',
