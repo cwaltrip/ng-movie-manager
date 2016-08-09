@@ -18,7 +18,7 @@ angular.module('movieCollectionApp')
     		nextId: localStorage['MovieCollectionApp.nextId'] ? 
     			parseInt(localStorage['MovieCollectionApp.nextId']) : 0
     	};
-        // Fix corrupted nextId (remove after development)
+        // Fix corrupted nextId (TODO: remove after development)
         if (isNaN(movielist.nextId)) {
             console.log('nextId corrected from NaN to 0');
             movielist.nextId = 0;
@@ -32,25 +32,27 @@ angular.module('movieCollectionApp')
     	localStorage['MovieCollectionApp.nextId'] = MovieList.nextId;
     };
 
-    // Helper to natural-sort movies by title
-    var sortByTitle = function(movies) {
-        return _.sortBy(movies, function(o) { return o.title; });
-    };
-
-    // Helper to find a movie with a given ID (uses lodash.js)
+    // Find a movie with a given ID (uses lodash.js)
     var findById = function(movieId) {
     	return _.find(MovieList.movies, function(movie) {
     		return movie.id === parseInt(movieId);
     	});
     };
 
-    // Helper to find a movie with a given ID (uses lodash.js)
+    // Find a movie with a given ID (uses lodash.js)
     var findByValue = function(value) {
         // return _.find(MovieList.movies, function(movie) {
         //     return _.includes(Object.values(movie), value);
         // });
         return _.filter(MovieList.movies, function(movie) {
             return _.includes(movie, value);
+        });
+    };
+
+    // Perform a natural (alphabetical) sort of movies by title (uses lodash.js)
+    var sortByTitle = function(movies) {
+        return _.sortBy(movies, function(mov) { 
+            return mov.title; 
         });
     };
 

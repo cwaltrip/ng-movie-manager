@@ -1,4 +1,4 @@
-<!-- <p>This is the Search view.</p> -->
+<!-- Search form -->
 <div class="panel panel-info">
 	<div class="panel-heading">
 		Search
@@ -9,21 +9,18 @@
 			<label for="search-field">Enter any term to search...</label>
 			<input type="text" class="form-control" id="search-field" placeholder="Search" ng-model="search.term" required>
 		</div>
-		<!-- <div class="panel-footer"> -->
 			<button type="submit" class="btn btn-success" ng-click="findMovies(search.term)" ng-disabled="!searchForm.$valid">Search</button>
-			<!-- <button type="button" class="btn btn-danger" ng-click="$location.path('main/')">Cancel</button> -->
-		<!-- </div> -->
 	</form>
 	</div>
 </div>
-
+<!-- Results panel, hidden until a search is performed -->
 <div class="panel panel-info" ng-show="showResults">
 	<div class="panel-heading">
 		{{searchlist.length ? 'Results' : 'No results'}}
 	</div>
 	<div class="panel-body">
 		<div ng-if="!searchlist.length" class="text-center">
-			No movies found! Please try another search.
+			No movies found. Please try another search.
 		</div>
 		<div class="list-group">
 			<a class="list-group-item" ng-repeat="result in searchlist track by $index">

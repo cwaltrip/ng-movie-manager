@@ -10,10 +10,10 @@
 angular.module('movieCollectionApp')
   .service('MoviesearchService', function MoviesearchService() {
 
-  	// Get a handle to the model in this scope
+  	// // Get a handle to the model in this scope
     // var MovieList = MovielistService.query();
 
-    // Helper to find a movie with a given ID (uses lodash.js)
+    // // Helper to find a movie with a given ID (uses lodash.js)
     // this.findById = function(movieId) {
     // 	return _.find(MovieList.movies, function(movie) {
     // 		return movie.id === parseInt(movieId);
@@ -32,7 +32,7 @@ angular.module('movieCollectionApp')
     // 	return MovieList.movies;
     // };
 
-    // var sortByTitle = function(movies) {
+    // // var sortByTitle = function(movies) {
     //     return _.sortBy(movies, function(o) { return o.title; });
     // };
 

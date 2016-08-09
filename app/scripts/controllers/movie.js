@@ -10,8 +10,7 @@
 angular.module('movieCollectionApp')
   .controller('MovieCtrl', function ($scope, $location, $routeParams, MovielistService) {
     
-  	// Get a handle to the model in this scope
-  	console.log('routeParams.movieId = ' + $routeParams.movieId);
+  	// Get the current movie's ID from the $route parameters
     $scope.movie = MovielistService.query($routeParams.movieId);
 
   });
